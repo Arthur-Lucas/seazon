@@ -5,7 +5,7 @@ class Color {
   }
 }
 
-const Summercolors = [new Color("main", "#000000")];
+const Summercolors = [];
 
 const Wintercolors = [];
 
@@ -27,12 +27,7 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
 
       return "Winter";
     }
-    //     // theme = require("./src/index")
   }
 
-  return "Format invalide";
+  return "Invalid format";
 };
-
-// module.exports = getThemeFromDate;
-exports.Summercolors = Summercolors;
-exports.Wintercolors = Wintercolors;
