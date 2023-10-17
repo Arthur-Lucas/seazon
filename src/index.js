@@ -11,14 +11,26 @@ const Wintercolors = [];
 
 exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
   const Today = new Date();
+  const SummerStartDate = new Date(BeginSummerDate);
+  const WinterStartDate = new Date(BeginWinterDate);
 
-  if (BeginSummerDate === new Date() && BeginWinterDate === new Date()) {
-    //...
-    // if summer : return Summer colors
-    // else : return Wintercolors
+  if (!isNaN(SummerStartDate) && !isNaN(WinterStartDate)) {
+    SummerStartDate.setFullYear(Today.getFullYear());
+    WinterStartDate.setFullYear(Today.getFullYear());
+
+    if (Today >= SummerStartDate && Today < WinterStartDate) {
+      // return class summer
+
+      return "Summer";
+    } else {
+      // return class winter
+
+      return "Winter";
+    }
+    //     // theme = require("./src/index")
   }
 
-  return "echec";
+  return "Format invalide";
 };
 
 // module.exports = getThemeFromDate;
