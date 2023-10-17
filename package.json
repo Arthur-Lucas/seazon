@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arthur-Lucas/tempus.git"
+    "url": "git+https://github.com/Arthur-Lucas/seazon.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Arthur-Lucas/tempus/issues"
+    "url": "https://github.com/Arthur-Lucas/seazon/issues"
   },
-  "homepage": "https://github.com/Arthur-Lucas/tempus#readme",
+  "homepage": "https://github.com/Arthur-Lucas/seazon#readme",
   "dependencies": {
     "jest": "^29.7.0",
     "request": "^2.88.2",
