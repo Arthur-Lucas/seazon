@@ -1,13 +1,13 @@
-class Color {
-  constructor(name, code) {
-    this.name = name;
-    this.code = code;
-  }
-}
+// class Color {
+//   constructor(name, code) {
+//     this.name = name;
+//     this.code = code;
+//   }
+// }
 
-const Summercolors = [];
+// const Summercolors = [];
 
-const Wintercolors = [];
+// const Wintercolors = [];
 
 exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
   const Today = new Date();
