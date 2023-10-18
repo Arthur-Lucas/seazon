@@ -15,7 +15,7 @@ You inform your summer and winter seasons begining date
 - `WinterColors`
 - updateDateTime()
 
-The date variables have to be a string in the format : "MM/dd"
+The date variables have to be a string in the format : "dd/MM"
 
 
 ### For the exemple in the sandbox we setup the css this way
