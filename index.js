@@ -97,13 +97,13 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
 
         const customCSS = `
         .seazon-main-color {
-            background-color: #ebf5ee;
+            background-color: #FF9505;
           }
         .seazon-second-color {
-          background-color: #283044;
+          background-color: #353531;
         }
         .seazon-third-color {
-          background-color: #78A1BB;
+          background-color: #EC4E20;
         }
         `;
         styleElement.innerHTML = customCSS;
@@ -115,18 +115,18 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
     } else {
       if (typeof process === "undefined") {
         const styleElement = document.createElement("style");
-
         const customCSS = `
         .seazon-main-color {
-            background-color: #FF9505;
+            background-color: #ebf5ee;
           }
         .seazon-second-color {
-          background-color: #353531;
+          background-color: #283044;
         }
         .seazon-third-color {
-          background-color: #EC4E20;
+          background-color: #78A1BB;
         }
         `;
+
         styleElement.innerHTML = customCSS;
         document.head.appendChild(styleElement);
       }
