@@ -113,7 +113,7 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
       // addClassToCSSFile(Summercolors);
       return "Summercolors added to CSS";
     } else {
-      if (document) {
+      if (typeof process === "undefined") {
         const styleElement = document.createElement("style");
 
         const customCSS = `
