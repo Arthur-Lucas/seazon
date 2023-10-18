@@ -19,7 +19,6 @@
   "homepage": "https://github.com/Arthur-Lucas/seazon#readme",
   "dependencies": {
     "eslint": "^8.51.0",
-    "fs": "^0.0.1-security",
     "jest": "^29.7.0",
     "luxon": "^3.4.3",
     "request": "^2.88.2"
