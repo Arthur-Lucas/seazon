@@ -1,16 +1,24 @@
 const { Interval, DateTime } = require("luxon");
+const fs = require("fs");
 
-const Summercolors = {
-  mainColor: "#EBF5EE",
-  secondColor: "#283044",
-  thirdColor: "#78A1BB",
-};
+class Color {
+  constructor(name, code) {
+    this.name = name;
+    this.code = code;
+  }
+}
 
-const Wintercolors = {
-  mainColor: "#FF9505",
-  secondColor: "#353531",
-  thirdColor: "#EC4E20",
-};
+const Summercolors = [
+  new Color("seazon-main-color", "#ebf5ee"),
+  new Color("seazon-second-color", "#283044"),
+  new Color("seazon-third-color", "#78A1BB"),
+];
+
+const Wintercolors = [
+  new Color("seazon-main-color", "#FF9505"),
+  new Color("seazon-second-color", "#353531"),
+  new Color("seazon-third-color", "#EC4E20"),
+];
 
 function isValidFormat(input) {
   const dateFormatRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])$/;
@@ -34,6 +42,27 @@ function extractMonthFromDate(input) {
     return match[1];
   }
   return null;
+}
+
+function addClassToCSSFile(colors) {
+  const cssFilePath = "./css/styles.css";
+  fs.readFile(cssFilePath, "utf8", (err, data) => {
+    data = "";
+    if (err) {
+      console.error("Error reading CSS file:", err);
+      return;
+    }
+    colors.forEach((color) => {
+      data += `.${color.name} { background-color: ${color.code} }\n`;
+    });
+    // Modify the CSS content by adding a new class
+
+    fs.writeFile(cssFilePath, data, "utf8", (err) => {
+      if (err) {
+        console.error("Error writing CSS file:", err);
+      }
+    });
+  });
 }
 
 exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
@@ -63,14 +92,10 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
       intervalBeginSummer.invalid == null &&
       intervalBeginWinter.invalid != null
     ) {
-      // if(document){
-      //   // document.body.style.backgroundColor = "black";
-      // }
+      addClassToCSSFile(Summercolors);
       return Summercolors;
     } else {
-      // if(document){
-      //   //  document.body.style.backgroundColor = "red";
-      // }
+      addClassToCSSFile(Wintercolors);
       return Wintercolors;
     }
   }
