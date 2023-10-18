@@ -92,7 +92,7 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
       intervalBeginSummer.invalid == null &&
       intervalBeginWinter.invalid != null
     ) {
-      if (document) {
+      if (typeof process === "undefined") {
         const styleElement = document.createElement("style");
 
         const customCSS = `
