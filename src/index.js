@@ -54,8 +54,8 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
       day: dayMatch,
     });
 
-    var dayMatch = extractDayFromDate(BeginWinterDate);
-    var montMatch = extractMonthFromDate(BeginWinterDate);
+    dayMatch = extractDayFromDate(BeginWinterDate);
+    montMatch = extractMonthFromDate(BeginWinterDate);
 
     const WinterStartDate = DateTime.fromObject({
       month: montMatch,
