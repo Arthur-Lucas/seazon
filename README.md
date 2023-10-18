@@ -1,4 +1,5 @@
-# Seazon
+# Seazon ![Logo](./src/logoSeazon.svg)
+
 
 ## Installation
 
@@ -7,37 +8,38 @@ npm install seazon
 ```
 ## How to use ?
 
-You inform your summer and winter seasons begining date
+Import theme from the library in your parent file
 
-### Here is a list of variables and functions included by the module :
-
-- `SummerColors`
-- `WinterColors`
-- updateDateTime()
-
-The date variables have to be a string in the format : "dd/MM"
-
-
-### For the exemple in the sandbox we setup the css this way
-
-```css
-:root {
-    --primary-color: hotpink;
-    --secondary-color: black;
-}
-
-body.summer--color :root {
-    --primary-color: pink;
-    --secondary-color: black;
-}
-
-body.winter--color :root {
-    --primary-color: red;
-    --secondary-color: white;
-}
+```bash
+import theme from "seazon";
 ```
 
-## Sandbox
+You inform your summer and winter seasons begining date in dd/MM format
+
+```bash
+theme.getThemeFromDate("20/06","18/12");
+```
+
+*The first date sets the start of the summer season and the second the end
+
+Classes are automatically updated and can be declared in all project files.
+Here are the possible classes :
+
+|Class Name | season | Hex                                                                |
+|-----------| ------ | ------------------------------------------------------------------ |
+|seazon-main-color |summer| ![#ebf5ee](https://via.placeholder.com/10/ebf5ee?text=+) #ebf5ee |
+|seazon-second-color |summer| ![#283044](https://via.placeholder.com/10/283044?text=+) #283044 |
+|seazon-third-color |summer| ![#78A1BB](https://via.placeholder.com/10/78A1BB?text=+) #78A1BB |
+|seazon-main-color |winter| ![#FF9505](https://via.placeholder.com/10/FF9505?text=+) #FF9505 |
+|seazon-second-color |winter| ![#353531](https://via.placeholder.com/10/353531?text=+) #353531 |
+|seazon-third-color |winter| ![#EC4E20](https://via.placeholder.com/10/EC4E20?text=+) #EC4E20 |
+
+
+
+### Here is a list of functions included by the module :
+
+- getThemeFromDate("date1","date2")
+
 
 ## Devs
 
