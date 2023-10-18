@@ -6,9 +6,17 @@ const { Interval, DateTime } = require("luxon");
 //   }
 // }
 
-// const Summercolors = [];
+const Summercolors = {
+  mainColor: "#EBF5EE",
+  secondColor: "#283044",
+  thirdColor: "#78A1BB",
+};
 
-// const Wintercolors = [];
+const Wintercolors = {
+  mainColor: "#FF9505",
+  secondColor: "#353531",
+  thirdColor: "#EC4E20",
+};
 
 function isValidFormat(input) {
   const dateFormatRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])$/;
@@ -61,13 +69,15 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
       intervalBeginSummer.invalid == null &&
       intervalBeginWinter.invalid != null
     ) {
-      return "Summer";
+      document.body.style.backgroundColor = "black";
+      return typeof Summercolors;
     } else {
-      return "Winter";
+      document.body.style.backgroundColor = "red";
+      return typeof Wintercolors;
     }
   }
 
-  return "wrong";
+  return "Wrong format";
 };
 
 // theme = require("./src/index")
