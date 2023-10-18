@@ -66,12 +66,12 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
       // if(document){
       //   // document.body.style.backgroundColor = "black";
       // }
-      return typeof Summercolors;
+      return Summercolors;
     } else {
       // if(document){
       //   //  document.body.style.backgroundColor = "red";
       // }
-      return typeof Wintercolors;
+      return Wintercolors;
     }
   }
 
