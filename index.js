@@ -1,10 +1,4 @@
 const { Interval, DateTime } = require("luxon");
-// class Color {
-//   constructor(name, code) {
-//     this.name = name;
-//     this.code = code;
-//   }
-// }
 
 const Summercolors = {
   mainColor: "#EBF5EE",
@@ -69,10 +63,14 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
       intervalBeginSummer.invalid == null &&
       intervalBeginWinter.invalid != null
     ) {
-      document.body.style.backgroundColor = "black";
+      // if(document){
+      //   // document.body.style.backgroundColor = "black";
+      // }
       return typeof Summercolors;
     } else {
-      document.body.style.backgroundColor = "red";
+      // if(document){
+      //   //  document.body.style.backgroundColor = "red";
+      // }
       return typeof Wintercolors;
     }
   }

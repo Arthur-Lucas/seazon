@@ -1,4 +1,4 @@
-Theme = require("../src/index");
+Theme = require("../index");
 
 describe("getThemeFromDate", () => {
   it("should return color from date theme", () => {
