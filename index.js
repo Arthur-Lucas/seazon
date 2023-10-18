@@ -111,7 +111,7 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
       }
 
       // addClassToCSSFile(Summercolors);
-      return Summercolors;
+      return "Summercolors added to CSS";
     } else {
       if (document) {
         const styleElement = document.createElement("style");
@@ -131,20 +131,9 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
         document.head.appendChild(styleElement);
       }
       // addClassToCSSFile(Wintercolors);
-      return Wintercolors;
+      return "Wintercolors added to CSS";
     }
   }
 
   return "Wrong format";
 };
-// const Summercolors = [
-//   new Color("seazon-main-color", "#ebf5ee"),
-//   new Color("seazon-second-color", "#283044"),
-//   new Color("seazon-third-color", "#78A1BB"),
-// ];
-
-// const Wintercolors = [
-//   new Color("seazon-main-color", "#FF9505"),
-//   new Color("seazon-second-color", "#353531"),
-//   new Color("seazon-third-color", "#EC4E20"),
-// ];
