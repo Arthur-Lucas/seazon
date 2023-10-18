@@ -1,3 +1,4 @@
+const { Interval, DateTime } = require("luxon");
 // class Color {
 //   constructor(name, code) {
 //     this.name = name;
@@ -5,33 +6,78 @@
 //   }
 // }
 
-// const Summercolors = [];
+const Summercolors = {
+  mainColor: "#EBF5EE",
+  secondColor: "#283044",
+  thirdColor: "#78A1BB",
+};
 
-// const Wintercolors = [];
+const Wintercolors = {
+  mainColor: "#FF9505",
+  secondColor: "#353531",
+  thirdColor: "#EC4E20",
+};
+
+function isValidFormat(input) {
+  const dateFormatRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])$/;
+
+  return dateFormatRegex.test(input);
+}
+
+function extractDayFromDate(input) {
+  const dayRegex = /(\d{2})\/\d{2}/;
+  const match = dayRegex.exec(input);
+  if (match) {
+    return match[1];
+  }
+  return null;
+}
+
+function extractMonthFromDate(input) {
+  const monthRegex = /\d{2}\/(\d{2})/;
+  const match = monthRegex.exec(input);
+  if (match) {
+    return match[1];
+  }
+  return null;
+}
 
 exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
-  if (BeginSummerDate != undefined && BeginWinterDate != undefined) {
-    const Today = new Date();
-    const SummerStartDate = new Date(BeginSummerDate);
-    const WinterStartDate = new Date(BeginWinterDate);
+  const Today = DateTime.now();
 
-    if (!isNaN(SummerStartDate) && !isNaN(WinterStartDate)) {
-      SummerStartDate.setFullYear(Today.getFullYear());
-      WinterStartDate.setFullYear(Today.getFullYear());
+  if (isValidFormat(BeginSummerDate) && isValidFormat(BeginWinterDate)) {
+    var dayMatch = extractDayFromDate(BeginSummerDate);
+    var montMatch = extractMonthFromDate(BeginSummerDate);
 
-      if (Today >= SummerStartDate && Today < WinterStartDate) {
-        // return class summer
+    const SummerStartDate = DateTime.fromObject({
+      month: montMatch,
+      day: dayMatch,
+    });
 
-        return "Summer";
-      } else {
-        // return class winter
+    dayMatch = extractDayFromDate(BeginWinterDate);
+    montMatch = extractMonthFromDate(BeginWinterDate);
 
-        return "Winter";
-      }
+    const WinterStartDate = DateTime.fromObject({
+      month: montMatch,
+      day: dayMatch,
+    });
+
+    const intervalBeginSummer = Interval.fromDateTimes(SummerStartDate, Today);
+    const intervalBeginWinter = Interval.fromDateTimes(WinterStartDate, Today);
+
+    if (
+      intervalBeginSummer.invalid == null &&
+      intervalBeginWinter.invalid != null
+    ) {
+      document.body.style.backgroundColor = "black";
+      return typeof Summercolors;
     } else {
-      return "Invalid format";
+      document.body.style.backgroundColor = "red";
+      return typeof Wintercolors;
     }
   }
 
-  return "Invalid format";
+  return "Wrong format";
 };
+
+// theme = require("./src/index")
