@@ -3,7 +3,7 @@ import theme from "seazon";
 import logo from "../src/logoSeazon.svg"
 
 export default function App() {
-  theme.getThemeFromDate("20/06", "18/10");
+  theme.getThemeFromDate("20/06", "18/12");
   return (
     <div className="App seazon-main-color">
       <header className="seazon-third-color">
