@@ -27,12 +27,12 @@ Here are the possible classes :
 
 |Class Name | season | Hex                                                                |
 |-----------| ------ | ------------------------------------------------------------------ |
-|seazon-main-color |summer| ![#ebf5ee](https://via.placeholder.com/10/ebf5ee?text=+) #ebf5ee |
-|seazon-second-color |summer| ![#283044](https://via.placeholder.com/10/283044?text=+) #283044 |
-|seazon-third-color |summer| ![#78A1BB](https://via.placeholder.com/10/78A1BB?text=+) #78A1BB |
-|seazon-main-color |winter| ![#FF9505](https://via.placeholder.com/10/FF9505?text=+) #FF9505 |
-|seazon-second-color |winter| ![#353531](https://via.placeholder.com/10/353531?text=+) #353531 |
-|seazon-third-color |winter| ![#EC4E20](https://via.placeholder.com/10/EC4E20?text=+) #EC4E20 |
+|seazon-main-color |winter| ![#ebf5ee](https://via.placeholder.com/10/ebf5ee?text=+) #ebf5ee |
+|seazon-second-color |winter| ![#283044](https://via.placeholder.com/10/283044?text=+) #283044 |
+|seazon-third-color |winter| ![#78A1BB](https://via.placeholder.com/10/78A1BB?text=+) #78A1BB |
+|seazon-main-color |summer| ![#f0ead2](https://via.placeholder.com/10/f0ead2?text=+) #f0ead2 |
+|seazon-second-color |summer| ![#adc178](https://via.placeholder.com/10/adc178?text=+) #adc178 |
+|seazon-third-color |summer| ![#dde5b6](https://via.placeholder.com/10/dde5b6?text=+) #dde5b6 |
 
 
 
