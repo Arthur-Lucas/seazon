@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import theme from "seazon";
+import logo from "../src/logoSeazon.svg"
 
-function App() {
+export default function App() {
+  theme.getThemeFromDate("20/06", "18/10");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="App seazon-main-color">
+      <header className="seazon-third-color">
+        <img src={logo}></img>
+        <h1>Seazon</h1>
+        <h2>This is a test of our season library</h2>
       </header>
+      <div className="rectangle seazon-second-color"></div>
     </div>
   );
 }
-
-export default App;
