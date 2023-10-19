@@ -97,13 +97,13 @@ exports.getThemeFromDate = (BeginSummerDate, BeginWinterDate) => {
 
         const customCSS = `
         .seazon-main-color {
-            background-color: #FF9505;
+            background-color: #f0ead2;
           }
         .seazon-second-color {
-          background-color: #353531;
+          background-color: #adc178;
         }
         .seazon-third-color {
-          background-color: #EC4E20;
+          background-color: #dde5b6;
         }
         `;
         styleElement.innerHTML = customCSS;
